@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=Lobster&display=swap');
+
+// variables
+
+// $casino-color: #004A2F;
+$casino-color: #127C56;
+$navbar-color: #3D262A;
+$text-color: #FEFBF3;
+
+
+// fonts
+$logo-font: 'Lobster', cursive;
+$casion-font: 'Gelasio', serif;
+
+// tag selector
+* {
+    // CSS RESET
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    // GLOBAL
+    color: $text-color;
+    font-family: $casion-font;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+nav {
+    height: 10vh;
+    background-color: $navbar-color;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+
+    .nav__brand {
+        font-family: $logo-font;
+        font-size: 2rem;
+    }
+}
+
+main {
+    height: 90vh;
+    background-color: $casino-color;
+}
+
+// class selector

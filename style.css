@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Gelasio&family=Lobster&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #FEFBF3;
+  font-family: "Gelasio", serif;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+nav {
+  height: 10vh;
+  background-color: #3D262A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+nav .nav__brand {
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+}
+
+main {
+  height: 90vh;
+  background-color: #127C56;
+}
