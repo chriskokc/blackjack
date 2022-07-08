@@ -34,10 +34,26 @@ main {
   background-color: #127C56;
 }
 
-.game-title {
+.bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+}
+.bet .bet__amount {
   padding-top: 1.5rem;
   margin: 0 3rem 1.5rem;
   line-height: 3rem;
+}
+.bet .bet__btn {
+  background-color: #127C56;
+  position: relative;
+  right: 2.6rem;
+  height: 3rem;
+  width: 6rem;
+  padding: 1px;
+  font-size: 1.5rem;
+  border: 2px solid #FEFBF3;
 }
 
 .game {
