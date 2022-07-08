@@ -18,12 +18,15 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
 }
 nav .nav__brand {
   font-family: "Lobster", cursive;
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: #FED049;
+}
+nav .nav__rule {
+  font-size: 1.2rem;
 }
 
 main {
