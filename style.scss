@@ -3,9 +3,9 @@
 // variables
 
 // $casino-color: #004A2F;
-$casino-color: #127C56;
+$primary-color: #127C56;
 $brand-color: #FED049;
-$navbar-color: #3D262A;
+$secondary-color: #3D262A;
 $text-color: #FEFBF3;
 
 
@@ -32,7 +32,7 @@ a:visited {
 
 nav {
     height: 10vh;
-    background-color: $navbar-color;
+    background-color: $secondary-color;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -52,7 +52,7 @@ nav {
 
 main {
     height: 90vh;
-    background-color: $casino-color;
+    background-color: $primary-color;
 }
 
 // class selector
@@ -64,20 +64,35 @@ main {
 
 .game {
     margin: 1.2rem auto;
-    height: 80%;
+    height: 70%;
     width: 80%;
-    border: 2.5px solid $navbar-color;
+    border: 2.5px solid $secondary-color;
 
-    .dealer {
+    .game__dealer {
         height: 50%;
         width: 100%;
         border: 1px solid red;
     }
 
-    .player {
+    .game__player {
         height: 50%;
         width: 100%;
         border: 2px solid yellow;
     }
 
+}
+
+.decision {
+    margin: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+
+    .decision__btn {
+        background-color: $secondary-color;
+        height: 4rem;
+        width: 8rem;
+        font-size: 1.8rem;
+    }
 }
