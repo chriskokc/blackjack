@@ -4,13 +4,14 @@
 
 // $casino-color: #004A2F;
 $casino-color: #127C56;
+$brand-color: #FED049;
 $navbar-color: #3D262A;
 $text-color: #FEFBF3;
 
 
 // fonts
-$logo-font: 'Lobster', cursive;
-$casion-font: 'Gelasio', serif;
+$brand-font: 'Lobster', cursive;
+$casio-font: 'Gelasio', serif;
 
 // tag selector
 * {
@@ -21,7 +22,7 @@ $casion-font: 'Gelasio', serif;
 
     // GLOBAL
     color: $text-color;
-    font-family: $casion-font;
+    font-family: $casio-font;
 }
 
 a:link,
@@ -38,8 +39,9 @@ nav {
     padding: 0 1rem;
 
     .nav__brand {
-        font-family: $logo-font;
-        font-size: 2rem;
+        font-family: $brand-font;
+        font-size: 2.5rem;
+        color: $brand-color;
     }
 }
 
