@@ -40,9 +40,19 @@ main {
   line-height: 3rem;
 }
 
-.game-table {
+.game {
   margin: 1.2rem auto;
-  height: 70%;
+  height: 80%;
   width: 80%;
   border: 2.5px solid #3D262A;
+}
+.game .dealer {
+  height: 50%;
+  width: 100%;
+  border: 1px solid red;
+}
+.game .player {
+  height: 50%;
+  width: 100%;
+  border: 2px solid yellow;
 }
