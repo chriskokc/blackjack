@@ -86,3 +86,40 @@ main {
   width: 8rem;
   font-size: 1.8rem;
 }
+
+.card {
+  background-color: white;
+  height: 43%;
+  width: 23%;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  justify-items: center;
+}
+.card--cover {
+  background-color: midnightblue;
+  position: relative;
+  bottom: 10rem;
+  left: 4.6rem;
+}
+.card .card__content {
+  font-size: 3rem;
+  position: center;
+  color: black;
+}
+.card .card__content--red {
+  color: red;
+}
+.card .card__content--top {
+  grid-column: 1/2;
+  grid-row: 1/2;
+}
+.card .card__content--middle {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.card .card__content--bottom {
+  grid-column: 3/4;
+  grid-row: 3/4;
+}
