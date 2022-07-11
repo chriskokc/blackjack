@@ -30,6 +30,10 @@ a:visited {
     text-decoration: none;
 }
 
+button {
+    cursor: pointer;
+}
+
 nav {
     height: 10vh;
     background-color: $secondary-color;
