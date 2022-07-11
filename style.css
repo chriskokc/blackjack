@@ -103,9 +103,6 @@ main {
 }
 .card--cover {
   background-color: #FED049;
-  position: relative;
-  bottom: 10rem;
-  left: 4.6rem;
 }
 .card .card__content {
   font-size: 3rem;

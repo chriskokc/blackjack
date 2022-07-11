@@ -41,7 +41,6 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0 1.2rem;
-    // gap: 1rem;
 
     .nav__brand {
         font-family: $brand-font;
@@ -132,9 +131,6 @@ main {
 
     &--cover {
         background-color: $brand-color;
-        position: relative;
-        bottom: 10rem;
-        left: 4.6rem;
     }
 
     .card__content {
