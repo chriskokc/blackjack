@@ -133,7 +133,10 @@ main {
     .card__content {
         font-size: 2rem;
         position: center;
-        color: black;
+
+        &--black {
+            color: black;
+        }
 
         &--red {
             color: red; 

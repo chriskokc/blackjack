@@ -106,6 +106,8 @@ main {
 .card .card__content {
   font-size: 2rem;
   position: center;
+}
+.card .card__content--black {
   color: black;
 }
 .card .card__content--red {

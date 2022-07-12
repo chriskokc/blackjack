@@ -14,7 +14,7 @@ export const getRandomCard = (cards) => {
 export const getRandomSuit = (suits) => {
     const randomNumber = Math.floor(Math.random() * suits.length);
     return suits[randomNumber];
-}
+};
 
 export const distributeCardsToDealer = () => {
     dealer.push(getRandomCard(deckOfCard));
@@ -25,14 +25,16 @@ export const distributeCardsToDealer = () => {
     <h3 class="card__content card__content--bottom dealerNumber">${dealer[dealer.length - 1]}</h3>
 </div>`;
     
-    const dealerSuit = document.querySelector(".dealerSuit");
+    const dealerSuit = document.querySelectorAll(".dealerSuit");
     const dealerNumber = document.querySelectorAll(".dealerNumber");
 
-    if (dealerSuit.innerHTML === "❤️" || dealerSuit.innerHTML === "♦️") {
-        dealerNumber.forEach((numberObj) => {
-            numberObj.classList.add("card__content--red");
-        });
-    } 
+    if (dealerSuit[dealerSuit.length - 1].innerHTML === "❤️" || dealerSuit[dealerSuit.length - 1].innerHTML === "♦️"){
+        dealerNumber[dealerNumber.length - 2].classList.add("card__content--red");
+        dealerNumber[dealerNumber.length - 1].classList.add("card__content--red");
+    } else {
+        dealerNumber[dealerNumber.length - 2].classList.add("card__content--black");
+        dealerNumber[dealerNumber.length - 1].classList.add("card__content--black");
+    }
 };
 
 export const distributeCardsToPlayer = () => {
@@ -44,12 +46,14 @@ export const distributeCardsToPlayer = () => {
     <h3 class="card__content card__content--bottom playerNumber">${player[player.length - 1]}</h3>
     </div>`;
 
-    const playerSuit = document.querySelector(".playerSuit");
+    const playerSuit = document.querySelectorAll(".playerSuit");
     const playerNumber = document.querySelectorAll(".playerNumber");
 
-    if (playerSuit.innerHTML === "❤️" || playerSuit.innerHTML === "♦️") {
-        playerNumber.forEach((numberObj) => {
-            numberObj.classList.add("card__content--red");
-        });
+    if (playerSuit[playerSuit.length - 1].innerHTML === "❤️" || playerSuit[playerSuit.length - 1].innerHTML === "♦️"){
+        playerNumber[playerNumber.length - 2].classList.add("card__content--red");
+        playerNumber[playerNumber.length - 1].classList.add("card__content--red");
+    } else {
+        playerNumber[playerNumber.length - 2].classList.add("card__content--black");
+        playerNumber[playerNumber.length - 1].classList.add("card__content--black");
     }
-}
+};
