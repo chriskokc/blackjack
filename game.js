@@ -5,6 +5,7 @@ let player = [];
 let dealerSide = document.querySelector(".game__dealer");
 let playerSide = document.querySelector(".game__player");
 
+
 const displayCards = () => {
     dealerSide.innerHTML += `<div class="card">
     <h3 class="card__content card__content--top dealerNumber">${dealer[0]}</h3>
@@ -35,7 +36,7 @@ const displayCards = () => {
         dealerNumber.forEach((numberObj) => {
             numberObj.classList.add("card__content--red");
         });
-    }
+    } 
 
     if (playerFirstCardSuit.innerHTML === "❤️" || playerFirstCardSuit.innerHTML === "♦️") {
         playerFirstCardNumber.forEach((numberObj) => {
@@ -59,4 +60,43 @@ export const startGame = () => {
 
     // display their cards on hand
     displayCards();
+
+    compareScore();
+};
+
+
+const addScore = (cards) => {
+    const score = cards.reduce((totalScore, cardValue) => {
+        return totalScore + cardValue;
+    });
+    return score;
+};
+
+const getCardValue = (card) => {
+    switch (card) {
+        case "A":
+            return 11;
+        case "J":
+        case "Q":
+        case "K":
+            return 10;
+        default:
+           return Number(card);
+    }
+}
+
+const compareScore = () => {
+    const dealerScoreArr = dealer.map((card) => {
+        return getCardValue(card);
+    });
+    
+    const playerScoreArr = player.map((card) => {
+        return getCardValue(card);
+    });
+
+    const dealerScore = addScore(dealerScoreArr);
+    const playerScore = addScore(playerScoreArr);
+
+    console.log(`Dealer Score is ${dealerScore}.`);
+    console.log(`Player Score is ${playerScore}.`);
 };
