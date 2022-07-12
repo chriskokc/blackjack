@@ -15,7 +15,7 @@
 
     <main>
         <div class="bet">
-            <h1 class="bet__amount">Your bet: </h1>
+            <h1 class="bet__amount">Your bet: £10</h1>
             <button class="bet__btn">Start</button>
         </div>
         
@@ -33,6 +33,21 @@
             <button class="decision__btn hitBtn">Hit</button>
             <button class="decision__btn standBtn">Stand</button>
         </div>
+
+        <div id="player-win" class="modalBox">
+            <div class="modelContent">
+                <span id="player-win-closing" class="closing-cross">&#9587</span>
+                <p>🏆 Congratulation you win!</p>
+            </div>
+        </div>
+
+        <div id="dealer-win" class="modalBox">
+            <div class="modelContent">
+                <span id="dealer-win-closing" class="closing-cross">&#9587</span>
+                <p>Sorry Dealer wins 😕</p>
+            </div>
+        </div>
+
     </main>
     <script type="module" src="./script.js"></script>
 </body>

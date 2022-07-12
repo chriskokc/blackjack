@@ -1,7 +1,9 @@
+import { compareScore } from "./game.js";
+
 export let dealer = [];
 export let player = [];
-let dealerSide = document.querySelector(".game__dealer");
-let playerSide = document.querySelector(".game__player");
+export let dealerSide = document.querySelector(".game__dealer");
+export let playerSide = document.querySelector(".game__player");
 
 export const deckOfCard = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 export const suits = ["♠️", "❤️", "♣️", "♦️"];
@@ -56,4 +58,6 @@ export const distributeCardsToPlayer = () => {
         playerNumber[playerNumber.length - 2].classList.add("card__content--black");
         playerNumber[playerNumber.length - 1].classList.add("card__content--black");
     }
+
+    compareScore();
 };

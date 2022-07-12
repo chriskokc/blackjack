@@ -125,3 +125,24 @@ main {
   grid-column: 3/4;
   grid-row: 3/4;
 }
+
+.modalBox {
+  display: none;
+  position: fixed;
+  background-color: #FF5D5D;
+  z-index: 1;
+  top: 11rem;
+  right: 2rem;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+.modalBox .modelContent {
+  font-size: 2rem;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+.modalBox .modelContent .closing-cross {
+  float: right;
+  font-weight: bold;
+  cursor: pointer;
+}

@@ -1,13 +1,17 @@
-import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer } from "./cards.js"
-
-let isGameEnd = false;
-
+import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer, dealerSide, playerSide } from "./cards.js";
+import { modalBox, playerWinModalBox , dealerWinModalBox } from "./script.js";
 
 export const startGame = () => {
     // distribute cards to dealer and player
+
+    // hidden card for the dealer
+    dealer.push(getRandomCard(deckOfCard));
+    // displayed cards
     distributeCardsToDealer();
     distributeCardsToPlayer();
     distributeCardsToPlayer();
+
+    compareScore();
 };
 
 
@@ -44,10 +48,19 @@ export const compareScore = () => {
     let playerScore = addScore(playerScoreArr);
 
     // check for blackjack
-    if (dealerScore === 21 && dealer.inclues("A")) {
-        isGameEnd = true;
+    if (dealerScore === 21 && dealer.includes("A")) {
+        endGame(dealerWinModalBox);
     } else if (playerScore === 21 && player.includes("A")) {
-        isGameEnd = true;
+        endGame(playerWinModalBox);
+    }
+
+    // check for bust
+    if (playerScore > 21) {
+        endGame(dealerWinModalBox);
+    }
+
+    if (dealerScore > 21) {
+        endGame(playerWinModalBox);
     }
 
     // cases for having an Ace
@@ -63,6 +76,20 @@ export const compareScore = () => {
         playerScore = playerScore - 11 + 1;
     }
 
-    console.log(`Deal deck: ${dealer} Dealer number deck: ${dealerScoreArr} and its score is: ${dealerScore}.`);
-    console.log(`Player deck: ${player} Player number deck: ${playerScoreArr} and its score is: ${playerScore}.`);
+    console.log(`Deal deck: ${dealer}, Dealer number deck: ${dealerScoreArr} and its score is: ${dealerScore}.`);
+    console.log(`Player deck: ${player}, Player number deck: ${playerScoreArr} and its score is: ${playerScore}.`);
+
+};
+
+export const resetGame = () => {
+    console.log("Button got clicked");
+    modalBox.forEach(eachBox => {
+        eachBox.style.display = "none";
+    });
+    dealerSide.innerHTML = '<div class="card card--cover"></div>';
+    playerSide.innerHTML = '';
+}
+
+const endGame = (modalBox) => {
+    modalBox.style.display = "block";
 };
