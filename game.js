@@ -1,67 +1,13 @@
-import { deckOfCard , suits , getRandomCard , getRandomSuit } from "./cards.js"
+import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer } from "./cards.js"
 
-let dealer = [];
-let player = [];
-let dealerSide = document.querySelector(".game__dealer");
-let playerSide = document.querySelector(".game__player");
+let isGameEnd = false;
 
-
-const displayCards = () => {
-    dealerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top dealerNumber">${dealer[0]}</h3>
-    <h3 class="card__content card__content--middle dealerSuit">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom dealerNumber">${dealer[0]}</h3>
-</div>`;
-
-    playerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top playerFirstCardNumber">${player[0]}</h3>
-    <h3 class="card__content card__content--middle playerFirstCardSuit">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom playerFirstCardNumber">${player[0]}</h3>
-    </div>`;
-    
-    playerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top playerSecondCardNumber">${player[1]}</h3>
-    <h3 class="card__content card__content--middle playerSecondCardSuit">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom playerSecondCardNumber">${player[1]}</h3>
-    </div>`;
-
-    const dealerSuit = document.querySelector(".dealerSuit");
-    const dealerNumber = document.querySelectorAll(".dealerNumber");
-    const playerFirstCardSuit = document.querySelector(".playerFirstCardSuit");
-    const playerSecondCardSuit = document.querySelector(".playerSecondCardSuit");
-    const playerFirstCardNumber = document.querySelectorAll(".playerFirstCardNumber");
-    const playerSecondCardNumber = document.querySelectorAll(".playerSecondCardNumber");
-
-    if (dealerSuit.innerHTML === "❤️" || dealerSuit.innerHTML === "♦️") {
-        dealerNumber.forEach((numberObj) => {
-            numberObj.classList.add("card__content--red");
-        });
-    } 
-
-    if (playerFirstCardSuit.innerHTML === "❤️" || playerFirstCardSuit.innerHTML === "♦️") {
-        playerFirstCardNumber.forEach((numberObj) => {
-            numberObj.classList.add("card__content--red");
-        });
-    }
-
-    if (playerSecondCardSuit.innerHTML === "❤️" || playerSecondCardSuit.innerHTML === "♦️") {
-        playerSecondCardNumber.forEach((numberObj) => {
-            numberObj.classList.add("card__content--red");
-        });
-    }
-};
 
 export const startGame = () => {
-    // get random cards for both dealer and player
-    for (let i = 0; i < 2; i++) {
-        dealer.push(getRandomCard(deckOfCard));
-        player.push(getRandomCard(deckOfCard));
-    }
-
-    // display their cards on hand
-    displayCards();
-
-    compareScore();
+    // distribute cards to dealer and player
+    distributeCardsToDealer();
+    distributeCardsToPlayer();
+    distributeCardsToPlayer();
 };
 
 
@@ -85,7 +31,7 @@ const getCardValue = (card) => {
     }
 }
 
-const compareScore = () => {
+export const compareScore = () => {
     const dealerScoreArr = dealer.map((card) => {
         return getCardValue(card);
     });
@@ -94,9 +40,29 @@ const compareScore = () => {
         return getCardValue(card);
     });
 
-    const dealerScore = addScore(dealerScoreArr);
-    const playerScore = addScore(playerScoreArr);
+    let dealerScore = addScore(dealerScoreArr);
+    let playerScore = addScore(playerScoreArr);
 
-    console.log(`Dealer Score is ${dealerScore}.`);
-    console.log(`Player Score is ${playerScore}.`);
+    // check for blackjack
+    if (dealerScore === 21 && dealer.inclues("A")) {
+        isGameEnd = true;
+    } else if (playerScore === 21 && player.includes("A")) {
+        isGameEnd = true;
+    }
+
+    // cases for having an Ace
+    if (dealerScore > 21 && dealerScoreArr.includes(11)) {
+        dealerScoreArr.splice(dealerScoreArr.indexOf(11), 1);
+        dealerScoreArr.push(1);
+        dealerScore = dealerScore - 11 + 1;
+    }
+
+    if (playerScore > 21 && playerScoreArr.includes(11)) {
+        playerScoreArr.splice(playerScoreArr.indexOf(11), 1);
+        playerScoreArr.push(1);
+        playerScore = playerScore - 11 + 1;
+    }
+
+    console.log(`Deal deck: ${dealer} Dealer number deck: ${dealerScoreArr} and its score is: ${dealerScore}.`);
+    console.log(`Player deck: ${player} Player number deck: ${playerScoreArr} and its score is: ${playerScore}.`);
 };
