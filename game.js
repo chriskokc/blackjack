@@ -1,4 +1,4 @@
-import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer, dealerSide, playerSide } from "./cards.js";
+import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer , clearAll } from "./cards.js";
 import { modalBox, playerWinModalBox , dealerWinModalBox } from "./script.js";
 
 export const startGame = () => {
@@ -76,18 +76,17 @@ export const compareScore = () => {
         playerScore = playerScore - 11 + 1;
     }
 
-    console.log(`Deal deck: ${dealer}, Dealer number deck: ${dealerScoreArr} and its score is: ${dealerScore}.`);
+    console.log(`Dealer deck: ${dealer}, Dealer number deck: ${dealerScoreArr} and its score is: ${dealerScore}.`);
     console.log(`Player deck: ${player}, Player number deck: ${playerScoreArr} and its score is: ${playerScore}.`);
 
 };
 
 export const resetGame = () => {
-    console.log("Button got clicked");
     modalBox.forEach(eachBox => {
         eachBox.style.display = "none";
     });
-    dealerSide.innerHTML = '<div class="card card--cover"></div>';
-    playerSide.innerHTML = '';
+    clearAll();
+   
 }
 
 const endGame = (modalBox) => {

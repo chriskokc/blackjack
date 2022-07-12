@@ -61,3 +61,10 @@ export const distributeCardsToPlayer = () => {
 
     compareScore();
 };
+
+export const clearAll = () => {
+    dealer = [];
+    player = [];
+    dealerSide.innerHTML = '<div class="card card--cover"></div>';
+    playerSide.innerHTML = '';
+};
