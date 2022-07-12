@@ -12,31 +12,59 @@ let playerSide = document.querySelector(".game__player");
 // Functions
 const getRandomCard = (cards) => {
     const randomNumber = Math.floor(Math.random() * cards.length);
-    const cardDrawn = cards[randomNumber];
-    return cardDrawn;
+    return cards[randomNumber];
 };
 
 const getRandomSuit = (suits) => {
     const randomNumber = Math.floor(Math.random() * suits.length);
-    const suitDrawn = suits[randomNumber];
-    return suitDrawn;
+    return suits[randomNumber];
 }
 
 
 const displayCards = () => {
     dealerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top">${dealer[0]}</h3>
-    <h3 class="card__content card__content--middle">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom">${dealer[0]}</h3>
+    <h3 class="card__content card__content--top dealerNumber">${dealer[0]}</h3>
+    <h3 class="card__content card__content--middle dealerSuit">${getRandomSuit(suits)}</h3>
+    <h3 class="card__content card__content--bottom dealerNumber">${dealer[0]}</h3>
+</div>`;
+
+    playerSide.innerHTML += `<div class="card">
+    <h3 class="card__content card__content--top playerFirstCardNumber">${player[0]}</h3>
+    <h3 class="card__content card__content--middle playerFirstCardSuit">${getRandomSuit(suits)}</h3>
+    <h3 class="card__content card__content--bottom playerFirstCardNumber">${player[0]}</h3>
+    </div>`;
+    
+    playerSide.innerHTML += `<div class="card">
+    <h3 class="card__content card__content--top playerSecondCardNumber">${player[1]}</h3>
+    <h3 class="card__content card__content--middle playerSecondCardSuit">${getRandomSuit(suits)}</h3>
+    <h3 class="card__content card__content--bottom playerSecondCardNumber">${player[1]}</h3>
     </div>`;
 
-    for (let i = 0; i < 2; i++) {
-        playerSide.innerHTML += `<div class="card">
-        <h3 class="card__content card__content--top">${player[i]}</h3>
-        <h3 class="card__content card__content--middle">${getRandomSuit(suits)}</h3>
-        <h3 class="card__content card__content--bottom">${player[i]}</h3>
-        </div>`;
+    const dealerSuit = document.querySelector(".dealerSuit");
+    const dealerNumber = document.querySelectorAll(".dealerNumber");
+    const playerFirstCardSuit = document.querySelector(".playerFirstCardSuit");
+    const playerSecondCardSuit = document.querySelector(".playerSecondCardSuit");
+    const playerFirstCardNumber = document.querySelectorAll(".playerFirstCardNumber");
+    const playerSecondCardNumber = document.querySelectorAll(".playerSecondCardNumber");
+
+    if (dealerSuit.innerHTML === "❤️" || dealerSuit.innerHTML === "♦️") {
+        dealerNumber.forEach((numberObj) => {
+            numberObj.classList.add("card__content--red");
+        });
     }
+
+    if (playerFirstCardSuit.innerHTML === "❤️" || playerFirstCardSuit.innerHTML === "♦️") {
+        playerFirstCardNumber.forEach((numberObj) => {
+            numberObj.classList.add("card__content--red");
+        });
+    }
+
+    if (playerSecondCardSuit.innerHTML === "❤️" || playerSecondCardSuit.innerHTML === "♦️") {
+        playerSecondCardNumber.forEach((numberObj) => {
+            numberObj.classList.add("card__content--red");
+        });
+    }
+
 };
 
 const startGame = () => {
