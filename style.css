@@ -62,19 +62,17 @@ main {
 
 .game {
   margin: 1.2rem auto;
-  height: 70%;
+  height: 75%;
   width: 80%;
-  border: 2.5px solid #3D262A;
 }
-.game .game__dealer {
+.game .game__dealer, .game .game__player {
   height: 50%;
   width: 100%;
-  border: 1px solid red;
-}
-.game .game__player {
-  height: 50%;
-  width: 100%;
-  border: 2px solid yellow;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .decision {
@@ -85,6 +83,7 @@ main {
   gap: 1.2rem;
 }
 .decision .decision__btn {
+  margin-top: 2.3rem;
   background-color: #3D262A;
   height: 4rem;
   width: 8rem;
@@ -93,7 +92,7 @@ main {
 
 .card {
   background-color: white;
-  height: 43%;
+  height: 33%;
   width: 23%;
   border-radius: 10px;
   display: grid;
@@ -105,7 +104,7 @@ main {
   background-color: #FED049;
 }
 .card .card__content {
-  font-size: 3rem;
+  font-size: 2rem;
   position: center;
   color: black;
 }
