@@ -21,11 +21,12 @@ export const getRandomSuit = (suits) => {
 export const distributeCardsToDealer = () => {
     dealer.push(getRandomCard(deckOfCard));
 
-    dealerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top dealerNumber">${dealer[dealer.length - 1]}</h3>
-    <h3 class="card__content card__content--middle dealerSuit">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom dealerNumber">${dealer[dealer.length - 1]}</h3>
-</div>`;
+    dealerSide.innerHTML += `
+    <div class="card">
+        <h3 class="card__content card__content--top dealerNumber">${dealer[dealer.length - 1]}</h3>
+        <h3 class="card__content card__content--middle dealerSuit">${getRandomSuit(suits)}</h3>
+        <h3 class="card__content card__content--bottom dealerNumber">${dealer[dealer.length - 1]}</h3>
+    </div>`;
     
     const dealerSuit = document.querySelectorAll(".dealerSuit");
     const dealerNumber = document.querySelectorAll(".dealerNumber");
@@ -42,10 +43,11 @@ export const distributeCardsToDealer = () => {
 export const distributeCardsToPlayer = () => {
     player.push(getRandomCard(deckOfCard));
 
-    playerSide.innerHTML += `<div class="card">
-    <h3 class="card__content card__content--top playerNumber">${player[player.length - 1]}</h3>
-    <h3 class="card__content card__content--middle playerSuit">${getRandomSuit(suits)}</h3>
-    <h3 class="card__content card__content--bottom playerNumber">${player[player.length - 1]}</h3>
+    playerSide.innerHTML += `
+    <div class="card">
+        <h3 class="card__content card__content--top playerNumber">${player[player.length - 1]}</h3>
+        <h3 class="card__content card__content--middle playerSuit">${getRandomSuit(suits)}</h3>
+        <h3 class="card__content card__content--bottom playerNumber">${player[player.length - 1]}</h3>
     </div>`;
 
     const playerSuit = document.querySelectorAll(".playerSuit");

@@ -19,8 +19,8 @@ export const startGame = () => {
     checkScore();
     checkBlackJack();
     // check if any of them got a pair of Ace, one Ace should be counted as 1 and the other to be counted as 11
-    adjustForAce(player, playerScore);
-    adjustForAce(dealer, dealerScore);
+    playerScore = adjustForAce(player, playerScore);
+    dealerScore = adjustForAce(dealer, dealerScore);
 };
 
 
@@ -72,10 +72,11 @@ const adjustForAce = (anyPlayer, score) => {
     if (score > 21 && anyPlayer.includes("A")) {
         score = score - 11 + 1;
     }
+    return score;
 };
 
 export const compareScore = () => {
-    adjustForAce(player, playerScore);
+    playerScore = adjustForAce(player, playerScore);
 
     // check for bust
     if (playerScore > 21) {
@@ -97,7 +98,7 @@ export const playerChooseStand = () => {
         dealerScore = addScore(dealerScoreArr);
     }
 
-    adjustForAce(dealer, dealerScore);
+    dealerScore = adjustForAce(dealer, dealerScore);
 
     // check for bust
     if (dealerScore > 21) {
