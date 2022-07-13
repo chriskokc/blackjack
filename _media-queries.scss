@@ -1,0 +1,101 @@
+@use "./variables" as *;
+
+// Tablet view
+
+@media screen and (min-width: 768px) {
+
+    nav {
+        .nav__brand {
+            font-size: 3rem;
+        }
+    
+        .nav__rule {
+            font-size: 2rem;
+        }
+    }
+
+    button {
+        height: 4rem;
+        width: 8rem;
+        padding: 1% 1.2%;
+    }
+
+    .bet {
+        .bet__amount {
+            padding-top: 2rem;
+            font-size: 2.2rem;
+        }
+
+        .bet__btn {
+            font-size: 2rem;
+        }
+    }
+
+    .game {
+        .game__side-title {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .card {
+        height: 55%;
+        width: 18%;
+    
+        .card__content {
+            font-size: 3rem;
+            position: center;
+        }
+    }
+
+    .decision {
+        gap: 5rem;
+    }
+}
+
+// Desktop view
+
+@media screen and (min-width: 1024px) {
+
+    button {
+        height: 4rem;
+        width: 8rem;
+        padding: 1% 1.2%;
+    }
+
+    .bet {
+        .bet__amount {
+            padding-top: 2rem;
+            margin: 0 5rem 1.5rem;
+            font-size: 2.2rem;
+        }
+
+        .bet__btn {
+            font-size: 2rem;
+        }
+    }
+
+    .game {
+        margin: 1.2rem auto;
+        height: 70%;
+        width: 80%;
+    
+        .game__side-title {
+            font-size: 1.8rem;
+        }
+    }
+    
+    .card {
+        height: 60%;
+        width: 11%;
+    
+        .card__content {
+            font-size: 3rem;
+            position: center;
+        }
+    }
+
+    .decision {
+        margin: 2rem;
+        gap: 5rem;
+    }
+}
