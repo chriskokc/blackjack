@@ -2,8 +2,8 @@
 
 .card {
     background-color: white;
-    height: 33%;
-    width: 23%;
+    height: 50%;
+    width: 26%;
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -15,7 +15,7 @@
     }
 
     .card__content {
-        font-size: 2rem;
+        font-size: 1.5rem;
         position: center;
 
         &--black {
@@ -40,7 +40,5 @@
             grid-column: 3 / 4;
             grid-row: 3 / 4;
         }
-
     }
-    
 }
