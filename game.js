@@ -1,4 +1,4 @@
-import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer , clearAll } from "./cards.js";
+import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer , clearAll, replaceHiddenCardForDealer } from "./cards.js";
 import { betAmount , modalBox, playerWinModalBox , dealerWinModalBox , drawModalBox } from "./script.js";
 
 let amountOfBet = 10;
@@ -60,9 +60,11 @@ export const checkScore = () => {
 const checkBlackJack = () => {
     if (dealerScore === 21 && dealer.includes("A") && dealer.length === 2) {
         endGame(dealerWinModalBox);
+        replaceHiddenCardForDealer();
         amountOfBet -= 10;
     } else if (playerScore === 21 && player.includes("A") && player.length === 2) {
         endGame(playerWinModalBox);
+        replaceHiddenCardForDealer();
         amountOfBet += 10;
     }
 };
@@ -81,6 +83,7 @@ export const compareScore = () => {
     // check for bust
     if (playerScore > 21) {
         endGame(dealerWinModalBox);
+        replaceHiddenCardForDealer();
         amountOfBet -= 10;
     }
 
@@ -103,17 +106,21 @@ export const playerChooseStand = () => {
     // check for bust
     if (dealerScore > 21) {
         endGame(playerWinModalBox);
+        replaceHiddenCardForDealer();
         amountOfBet += 10;
     } else {
          // final score comparsion
         if (dealerScore > playerScore) {
             endGame(dealerWinModalBox);
+            replaceHiddenCardForDealer();
             amountOfBet -= 10;
         } else if (dealerScore < playerScore) {
             endGame(playerWinModalBox);
+            replaceHiddenCardForDealer();
             amountOfBet += 10;
         } else if (dealerScore == playerScore) {
             endGame(drawModalBox);
+            replaceHiddenCardForDealer();
         }
     }
 };
