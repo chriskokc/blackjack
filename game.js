@@ -18,7 +18,7 @@ export const startGame = () => {
     // check if anyone got a blackjack 
     checkScore();
     checkBlackJack();
-    // check if any of them got a pair of Ace
+    // check if any of them got a pair of Ace, one Ace should be counted as 1 and the other to be counted as 11
     adjustForAce(player, playerScore);
     adjustForAce(dealer, dealerScore);
 };
@@ -60,8 +60,10 @@ export const checkScore = () => {
 const checkBlackJack = () => {
     if (dealerScore === 21 && dealer.includes("A") && dealer.length === 2) {
         endGame(dealerWinModalBox);
+        amountOfBet -= 10;
     } else if (playerScore === 21 && player.includes("A") && player.length === 2) {
         endGame(playerWinModalBox);
+        amountOfBet += 10;
     }
 };
 
@@ -78,6 +80,7 @@ export const compareScore = () => {
     // check for bust
     if (playerScore > 21) {
         endGame(dealerWinModalBox);
+        amountOfBet -= 10;
     }
 
     console.log(`Dealer deck: ${dealer}, and its score is: ${dealerScore}.`);
@@ -99,12 +102,15 @@ export const playerChooseStand = () => {
     // check for bust
     if (dealerScore > 21) {
         endGame(playerWinModalBox);
+        amountOfBet += 10;
     } else {
          // final score comparsion
         if (dealerScore > playerScore) {
             endGame(dealerWinModalBox);
+            amountOfBet -= 10;
         } else if (dealerScore < playerScore) {
             endGame(playerWinModalBox);
+            amountOfBet += 10;
         } else if (dealerScore == playerScore) {
             endGame(drawModalBox);
         }
