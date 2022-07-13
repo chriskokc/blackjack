@@ -1,0 +1,36 @@
+.bet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.2rem;
+
+    .bet__amount {
+        padding-top: 1.5rem;
+        margin: 0 3rem 1.5rem;
+        line-height: 3rem;
+    }
+}
+
+.game {
+    margin: 1.2rem auto;
+    height: 75%;
+    width: 80%;
+
+    .game__dealer, .game__player {
+        height: 50%;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.decision {
+    margin: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}

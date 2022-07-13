@@ -1,0 +1,25 @@
+@use "./variables" as *;
+
+.modalBox {
+    display: none;
+    position: fixed;
+    background-color: $modalBox-color;
+    z-index: 1;
+    top: 11rem;
+    right: 2rem;
+    width: 10rem;
+    opacity: 0.8;
+    border-radius: 10px;
+
+    .modelContent {
+        font-size: 2rem;
+        margin: 1rem auto;
+        padding: 1rem;
+        
+        .closing-cross {
+            float: right;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

@@ -12,44 +12,16 @@ a:visited {
   text-decoration: none;
 }
 
-button {
-  cursor: pointer;
-}
-
-nav {
-  height: 10vh;
-  background-color: #3D262A;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 1.2rem;
-}
-nav .nav__brand {
-  font-family: "Lobster", cursive;
-  font-size: 2rem;
-  color: #FED049;
-}
-nav .nav__rule {
-  font-size: 1.2rem;
-}
-
 main {
   height: 90vh;
   background-color: #127C56;
 }
 
-.bet {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1.2rem;
+button {
+  cursor: pointer;
 }
-.bet .bet__amount {
-  padding-top: 1.5rem;
-  margin: 0 3rem 1.5rem;
-  line-height: 3rem;
-}
-.bet .bet__btn {
+
+.bet__btn {
   background-color: #127C56;
   position: relative;
   right: 2.6rem;
@@ -60,30 +32,7 @@ main {
   border: 2px solid #FEFBF3;
 }
 
-.game {
-  margin: 1.2rem auto;
-  height: 75%;
-  width: 80%;
-}
-.game .game__dealer, .game .game__player {
-  height: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.decision {
-  margin: 1.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1.2rem;
-}
-.decision .decision__btn {
-  margin-top: 2.3rem;
+.decision__btn {
   background-color: #3D262A;
   height: 4rem;
   width: 8rem;
@@ -126,6 +75,41 @@ main {
   grid-row: 3/4;
 }
 
+.bet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.2rem;
+}
+.bet .bet__amount {
+  padding-top: 1.5rem;
+  margin: 0 3rem 1.5rem;
+  line-height: 3rem;
+}
+
+.game {
+  margin: 1.2rem auto;
+  height: 75%;
+  width: 80%;
+}
+.game .game__dealer, .game .game__player {
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.decision {
+  margin: 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+}
+
 .modalBox {
   display: none;
   position: fixed;
@@ -133,6 +117,7 @@ main {
   z-index: 1;
   top: 11rem;
   right: 2rem;
+  width: 10rem;
   opacity: 0.8;
   border-radius: 10px;
 }
@@ -145,4 +130,21 @@ main {
   float: right;
   font-weight: bold;
   cursor: pointer;
+}
+
+nav {
+  height: 10vh;
+  background-color: #3D262A;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1.2rem;
+}
+nav .nav__brand {
+  font-family: "Lobster", cursive;
+  font-size: 2rem;
+  color: #FED049;
+}
+nav .nav__rule {
+  font-size: 1.2rem;
 }

@@ -1,0 +1,23 @@
+@use "./variables" as *;
+
+button {
+    cursor: pointer;
+}
+
+.bet__btn {
+    background-color: $primary-color;
+    position: relative;
+    right: 2.6rem;
+    height: 3rem;
+    width: 6rem;
+    padding: 1px;
+    font-size: 1.5rem;
+    border: 2px solid $text-color;
+}
+
+.decision__btn {
+    background-color: $secondary-color;
+    height: 4rem;
+    width: 8rem;
+    font-size: 1.8rem;
+}

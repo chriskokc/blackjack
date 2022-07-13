@@ -1,0 +1,46 @@
+@use "./variables" as *;
+
+.card {
+    background-color: white;
+    height: 33%;
+    width: 23%;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+    justify-items: center;
+
+    &--cover {
+        background-color: $brand-color;
+    }
+
+    .card__content {
+        font-size: 2rem;
+        position: center;
+
+        &--black {
+            color: black;
+        }
+
+        &--red {
+            color: red; 
+        }
+
+        &--top {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+        }
+
+        &--middle {
+            grid-column: 2 / 3;
+            grid-row: 2 / 3;
+        }
+
+        &--bottom {
+            grid-column: 3 / 4;
+            grid-row: 3 / 4;
+        }
+
+    }
+    
+}

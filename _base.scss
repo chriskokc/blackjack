@@ -1,0 +1,23 @@
+@use "./variables" as *;
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=Lobster&display=swap');
+
+* {
+    // CSS RESET
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    // GLOBAL
+    color: $text-color;
+    font-family: $casio-font;
+}
+
+a:link,
+a:visited {
+    text-decoration: none;
+}
+
+main {
+    height: 90vh;
+    background-color: $primary-color;
+}
