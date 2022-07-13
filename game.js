@@ -1,10 +1,13 @@
 import { dealer , player , deckOfCard , getRandomCard , distributeCardsToDealer , distributeCardsToPlayer , clearAll } from "./cards.js";
-import { modalBox, playerWinModalBox , dealerWinModalBox , drawModalBox } from "./script.js";
+import { betAmount , modalBox, playerWinModalBox , dealerWinModalBox , drawModalBox } from "./script.js";
 
+let amountOfBet = 10;
 let dealerScore = 0;
 let playerScore = 0;
 
 export const startGame = () => {
+    // show the amount of bet to the player
+    betAmount.innerHTML += `£${amountOfBet}`;
     // distribute cards to dealer and player
     // hidden card for the dealer
     dealer.push(getRandomCard(deckOfCard));
@@ -112,6 +115,7 @@ export const resetGame = () => {
     modalBox.forEach(eachBox => {
         eachBox.style.display = "none";
     });
+    betAmount.innerHTML = "Your bet: ";
     clearAll();
 };
 

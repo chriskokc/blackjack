@@ -1,6 +1,7 @@
 import { distributeCardsToPlayer } from "./cards.js";
 import { startGame , playerChooseStand , resetGame } from "./game.js";
 
+export const betAmount = document.querySelector(".bet__amount");
 const startBtn = document.querySelector(".bet__btn");
 const hitBtn = document.querySelector(".hitBtn");
 const standBtn = document.querySelector(".standBtn");
