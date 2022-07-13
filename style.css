@@ -13,7 +13,7 @@ a:visited {
 }
 
 main {
-  height: 90vh;
+  height: 92vh;
   background-color: #127C56;
 }
 
@@ -133,7 +133,7 @@ button {
 }
 
 nav {
-  height: 10vh;
+  height: 8vh;
   background-color: #3D262A;
   display: flex;
   justify-content: space-between;
