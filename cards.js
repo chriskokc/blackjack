@@ -1,4 +1,4 @@
-import { compareScore } from "./game.js";
+import { checkScore, compareScore } from "./game.js";
 
 export let dealer = [];
 export let player = [];
@@ -51,6 +51,7 @@ export const distributeCardsToPlayer = () => {
     const playerSuit = document.querySelectorAll(".playerSuit");
     const playerNumber = document.querySelectorAll(".playerNumber");
 
+    // assign the correct colour to the card, i.e red or black, according to its suit
     if (playerSuit[playerSuit.length - 1].innerHTML === "❤️" || playerSuit[playerSuit.length - 1].innerHTML === "♦️"){
         playerNumber[playerNumber.length - 2].classList.add("card__content--red");
         playerNumber[playerNumber.length - 1].classList.add("card__content--red");
@@ -59,6 +60,7 @@ export const distributeCardsToPlayer = () => {
         playerNumber[playerNumber.length - 1].classList.add("card__content--black");
     }
 
+    checkScore();
     compareScore();
 };
 
