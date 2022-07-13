@@ -18,25 +18,25 @@ main {
 }
 
 button {
+  right: 2.6rem;
+  height: 3rem;
+  width: 6rem;
+  padding: 1% 1.2%;
+  border-radius: 10px;
   cursor: pointer;
 }
 
 .bet__btn {
   background-color: #127C56;
   position: relative;
-  right: 2.6rem;
-  height: 3rem;
-  width: 6rem;
-  padding: 1px;
   font-size: 1.5rem;
   border: 2px solid #FEFBF3;
 }
 
 .decision__btn {
+  margin-top: 0.2rem;
   background-color: #3D262A;
-  height: 4rem;
-  width: 8rem;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .card {
