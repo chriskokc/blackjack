@@ -72,6 +72,7 @@ const checkBlackJack = () => {
 const adjustForAce = (anyPlayer, score) => {
     // cases for having an Ace
     if (score > 21 && anyPlayer.includes("A")) {
+        anyPlayer[anyPlayer.indexOf("A")] = "1";
         score = score - 11 + 1;
     }
     return score;
