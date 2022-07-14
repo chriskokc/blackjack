@@ -34,8 +34,14 @@ CK Casino is your place for playing Blackjack! This web game has been designed a
 
 ## Viewport
 - <em>Mobile view</em>:
+<img height="520" width="300" alt="Mobile" src="https://user-images.githubusercontent.com/87203804/178993652-289dde10-6376-4f06-8ec3-7fe8250ec5c6.png">
+
 - <em>Tablet view</em>:
+<img height="500" width="480" alt="Tablet" src="https://user-images.githubusercontent.com/87203804/178992804-a0ec9ea2-3520-430e-95ea-2513f72ccee8.png">
+
 - <em>Desktop view</em>:
+<img height="400" width="800" alt="Desktop" src="https://user-images.githubusercontent.com/87203804/178992498-75ae16ae-c768-4960-90f6-732f1a439c08.png">
+
 
 ## User Interaction
 - User plays the game by pressing the `Start` button
@@ -60,7 +66,10 @@ The `script.js` handles the DOM manipulation.
 
 ## Game Play
 - <em>Blackjack</em>:
+<img height="400" width="800" alt="Blackjack" src="https://user-images.githubusercontent.com/87203804/178993966-18402228-48e1-4316-95fe-6ff9cda2a939.png">
+
 - <em>Bust</em>:
+<img height="400" width="800" alt="Bust" src="https://user-images.githubusercontent.com/87203804/178994004-665f2373-e4a8-4fd8-9916-d8afdf5853a9.png">
 
 ## Future improvement
 - Some more UI elements could be added into the game like displaying the current score to the user
